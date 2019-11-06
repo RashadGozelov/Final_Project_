@@ -1,0 +1,10 @@
+﻿@model HeaderViewModel
+
+@foreach (var item in Model.Products)
+{
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-action">
+            <a href="/SingleProduct/Index?catid=@item.Id" style="color:black;">@item.Name</a>
+        </li>
+    </ul>
+}

@@ -1,0 +1,43 @@
+﻿@model Marka
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <form method="post">
+                    @*<div class="form-group" style="padding-bottom: 70px;">
+                        <select class="selectpicker" data-size="7" data-style="btn btn-primary btn-round" title="Kateqoriya">
+                            @foreach (var mrk in Model.Categorys)
+                                {
+                                <option value="@mrk.Id">@mrk.Name</option>
+                           
+                                }
+
+                        </select>
+                    </div>*@
+                        <div class="form-group">
+                            <label asp-for="Name" style="margin-top: -23px;font-size: 16px;color:black;">Name:</label>
+                            <textarea asp-for="Name" class="form-control" style="font-size: 21px;"></textarea>
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    <input type="submit" class="btn btn-info" value="Create" />
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <a asp-action="Index"><i class="fas fa-arrow-left"></i> Go Back</a>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.ckeditor.com/ckeditor5/15.0.0/classic/ckeditor.js"></script>
+<script>
+        ClassicEditor
+            .create(document.querySelector('#Name'))
+            .catch(error => {
+                console.error(error);
+        });
+</script>
+
